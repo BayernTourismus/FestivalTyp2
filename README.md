@@ -1,4 +1,8 @@
-# Bavaria Type Quiz Demo
+# FestivalTyp PWA (Real)
+
+> **Note:** This is the **FestivalTyp PWA**. There is a separate **BayernTyp PWA** project.
+
+## Bavaria Type Quiz Demo
 
 Offline-faehige PWA-Demo fuer ein Bayern-Urlaubsquiz. Die App laeuft als statische Vite/React-Anwendung und kann direkt bei Vercel deployed werden.
 
@@ -49,5 +53,5 @@ Danach ist die Demo direkt erreichbar.
 - Calculation Screen vor dem Ergebnis
 - Offline gerenderter QR-Code und Link-Panel fuer regionale Reisefuehrer
 - Offline-Cache per Service Worker
-- Auto-Reset nach 30 Sekunden Inaktivitaet, auf dem Ergebnis-Screen nach 120 Sekunden
+- Auto-Reset nach 120 Sekunden Inaktivitaet, auf dem Ergebnis-Screen nach 120 Sekunden
 - Lokale Analytics-Zaehler fuer Starts, Abbrueche, Abschluesse und Ergebnisverteilung

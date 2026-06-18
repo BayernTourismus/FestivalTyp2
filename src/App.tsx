@@ -6,7 +6,7 @@ import { evaluateQuiz } from "./lib/scoring";
 const STORAGE_KEY = "festivaltyp-state-v2";
 const ANALYTICS_KEY = "festivaltyp-analytics-v1";
 const CAMPAIGN_IMAGE_SRC = "/start.png";
-const IDLE_TIMEOUT_MS = 90_000;
+const IDLE_TIMEOUT_MS = 120_000;
 const RESULT_TIMEOUT_MS = 120_000;
 const ANSWER_FEEDBACK_MS = 220;
 const CALCULATION_DELAY_MS = 1_700;
