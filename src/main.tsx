@@ -3,6 +3,16 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./styles/app.css";
 
+const clearDevelopmentServiceWorkers = async () => {
+  const registrations = await navigator.serviceWorker.getRegistrations();
+  await Promise.all(registrations.map((registration) => registration.unregister()));
+
+  if ("caches" in window) {
+    const cacheNames = await caches.keys();
+    await Promise.all(cacheNames.filter((name) => name.startsWith("festivaltyp-")).map((name) => caches.delete(name)));
+  }
+};
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <App />
@@ -21,13 +31,4 @@ if ("serviceWorker" in navigator && import.meta.env.PROD) {
   });
 }
 
-const clearDevelopmentServiceWorkers = async () => {
-  const registrations = await navigator.serviceWorker.getRegistrations();
-  await Promise.all(registrations.map((registration) => registration.unregister()));
-
-  if ("caches" in window) {
-    const cacheNames = await caches.keys();
-    await Promise.all(cacheNames.filter((name) => name.startsWith("festivaltyp-")).map((name) => caches.delete(name)));
-  }
-};
 
