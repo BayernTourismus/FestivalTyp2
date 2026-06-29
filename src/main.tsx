@@ -9,6 +9,18 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   </React.StrictMode>,
 );
 
+if ("serviceWorker" in navigator && import.meta.env.PROD) {
+  navigator.serviceWorker.register("/sw.js").catch((error) => {
+    console.error("Service worker registration failed", error);
+  });
+} else if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    clearDevelopmentServiceWorkers().catch((error) => {
+      console.error("Service worker cleanup failed", error);
+    });
+  });
+}
+
 const clearDevelopmentServiceWorkers = async () => {
   const registrations = await navigator.serviceWorker.getRegistrations();
   await Promise.all(registrations.map((registration) => registration.unregister()));
@@ -19,16 +31,3 @@ const clearDevelopmentServiceWorkers = async () => {
   }
 };
 
-if ("serviceWorker" in navigator && import.meta.env.PROD) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/sw.js").catch((error) => {
-      console.error("Service worker registration failed", error);
-    });
-  });
-} else if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    clearDevelopmentServiceWorkers().catch((error) => {
-      console.error("Service worker cleanup failed", error);
-    });
-  });
-}
