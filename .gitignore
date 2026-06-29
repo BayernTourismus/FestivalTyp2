@@ -32,3 +32,5 @@ coverage/
 *.map
 *.tsbuildinfo
 *.d.ts
+
+public/bayern-gehoert-erlebt-o.mp4
