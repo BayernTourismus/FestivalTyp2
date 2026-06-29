@@ -1,4 +1,4 @@
-const CACHE_NAME = 'festivaltyp-v3'
+const CACHE_NAME = 'festivaltyp-v4'
 const APP_SHELL = [
   '/',
   '/index.html',
@@ -19,7 +19,12 @@ const APP_SHELL = [
   '/assets/museo-slab-500.woff2',
   '/assets/museo-slab-500.woff',
   '/assets/museo-slab-700.woff2',
-  '/assets/museo-slab-700.woff'
+  '/assets/museo-slab-700.woff',
+  '/start.png',
+  '/result-bg/1.png',
+  '/result-bg/2.png',
+  '/result-bg/3.png',
+  '/result-bg/4.png'
 ]
 
 self.addEventListener('install', (event) => {

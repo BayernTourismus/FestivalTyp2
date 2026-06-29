@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import { defaultLanguage, quizContent, type BayernTypeId, type QuizLanguage } from "./data/quiz";
 import { evaluateQuiz } from "./lib/scoring";
@@ -6,6 +6,7 @@ import { evaluateQuiz } from "./lib/scoring";
 const STORAGE_KEY = "festivaltyp-state-v2";
 const ANALYTICS_KEY = "festivaltyp-analytics-v1";
 const CAMPAIGN_IMAGE_SRC = "/start.png";
+const CAMPAIGN_VIDEO_SRC = "/bayern-gehoert-erlebt.mp4";
 const IDLE_TIMEOUT_MS = 120_000;
 const RESULT_TIMEOUT_MS = 120_000;
 const ANSWER_FEEDBACK_MS = 220;
@@ -111,6 +112,7 @@ const recordCompletion = (resultId: BayernTypeId) => {
 export default function App() {
   const [state, setState] = useState<AppState>(readStoredState);
   const [activeAnswerIndex, setActiveAnswerIndex] = useState<number | null>(null);
+  const [isOnline, setIsOnline] = useState(() => (typeof navigator !== "undefined" ? navigator.onLine : true));
   const answerTimerRef = useRef<number | undefined>();
   const content = quizContent[state.language];
   const { copy, questions, results } = content;
@@ -119,6 +121,18 @@ export default function App() {
   useEffect(() => {
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }, [state]);
+
+  useEffect(() => {
+    const handleConnectionChange = () => setIsOnline(navigator.onLine);
+
+    window.addEventListener("online", handleConnectionChange);
+    window.addEventListener("offline", handleConnectionChange);
+
+    return () => {
+      window.removeEventListener("online", handleConnectionChange);
+      window.removeEventListener("offline", handleConnectionChange);
+    };
+  }, []);
 
   useEffect(() => {
     if (state.screen === "attract") {
@@ -173,6 +187,21 @@ export default function App() {
   const currentQuestion = questions[state.currentQuestion];
   const result = state.resultId ? results[state.resultId] : null;
   const progress = Math.round((state.currentQuestion / totalQuestions) * 100);
+  const frameStyle = (
+    result && state.screen === "result"
+      ? {
+          "--frame-primary": result.color,
+          "--frame-secondary": result.accent,
+          "--frame-surface": "rgba(255, 255, 255, 0.9)",
+          "--frame-ink": result.color,
+        }
+      : {
+          "--frame-primary": "#001f47",
+          "--frame-secondary": "#008ecf",
+          "--frame-surface": "rgba(255, 255, 255, 0.9)",
+          "--frame-ink": "#001f47",
+        }
+  ) as CSSProperties;
 
   const goToStart = () => {
     setState({ ...initialState, language: state.language, screen: "start" });
@@ -238,7 +267,7 @@ export default function App() {
 
   return (
     <main className="app-shell">
-      <section className={`experience-frame screen-${state.screen}`}>
+      <section className={`experience-frame screen-${state.screen}`} style={frameStyle}>
         {state.screen !== "attract" ?
           <header className="app-header">
             <div className="brand-block">
@@ -255,7 +284,10 @@ export default function App() {
 
         {state.screen === "attract" ?
           <button className="attract-screen" onClick={goToStart} type="button">
-            <img className="campaign-video" src={CAMPAIGN_IMAGE_SRC} alt="" aria-hidden="true" />
+            <img className="campaign-video campaign-video-fallback" src={CAMPAIGN_IMAGE_SRC} alt="" aria-hidden="true" />
+            <video className="campaign-video" autoPlay loop muted playsInline poster={CAMPAIGN_IMAGE_SRC} aria-hidden="true">
+              <source src={CAMPAIGN_VIDEO_SRC} type="video/mp4" />
+            </video>
             <div className="attract-copy">
               <p className="eyebrow">{copy.attractEyebrow}</p>
               <h2>{copy.attractTitle}</h2>
@@ -370,6 +402,7 @@ export default function App() {
                 ))}
               </h3>
               <p>{result.guideLabel}</p>
+              {!isOnline ? <p className="offline-note">Offline-Modus: Der Guide-Link öffnet sich wieder, sobald das Gerät online ist.</p> : null}
               <a className="primary-button" href={result.guideUrl} rel="noreferrer" target="_blank">
                 {result.cta.split(/\s*\/\s*/).map((part, i, arr) => (
                   <span key={i}>

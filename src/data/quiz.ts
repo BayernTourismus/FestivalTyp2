@@ -73,7 +73,7 @@ const resultStyles: Record<BayernTypeId, Pick<ResultMeta, "color" | "accent" | "
     accent: "#ffce44",
     imageSrc: "/result-bg/1.png",
     backdrop:
-      "linear-gradient(135deg, rgba(158, 9, 47, 0.48), rgba(0, 31, 71, 0.26)), radial-gradient(circle at 74% 16%, rgba(255, 206, 68, 0.22), transparent 31%)",
+      "linear-gradient(135deg, rgba(158, 9, 47, 0.58), rgba(255, 206, 68, 0.18)), radial-gradient(circle at 74% 16%, rgba(255, 206, 68, 0.34), transparent 31%)",
   },
   "oberbayern": {
     guideUrl: "https://erlebe.bayern/guide/oberbayern/",
@@ -81,7 +81,7 @@ const resultStyles: Record<BayernTypeId, Pick<ResultMeta, "color" | "accent" | "
     accent: "#21b5ea",
     imageSrc: "/result-bg/2.png",
     backdrop:
-      "linear-gradient(135deg, rgba(0, 31, 71, 0.52), rgba(0, 142, 207, 0.24)), radial-gradient(circle at 78% 18%, rgba(33, 181, 234, 0.22), transparent 28%)",
+      "linear-gradient(135deg, rgba(0, 31, 71, 0.6), rgba(255, 206, 68, 0.14)), radial-gradient(circle at 78% 18%, rgba(33, 181, 234, 0.3), transparent 28%)",
   },
   "ostbayern": {
     guideUrl: "https://erlebe.bayern/guide/ostbayern/",
@@ -89,15 +89,15 @@ const resultStyles: Record<BayernTypeId, Pick<ResultMeta, "color" | "accent" | "
     accent: "#a0c96d",
     imageSrc: "/result-bg/3.png",
     backdrop:
-      "linear-gradient(135deg, rgba(0, 122, 98, 0.48), rgba(0, 31, 71, 0.32)), radial-gradient(circle at 78% 18%, rgba(160, 201, 109, 0.22), transparent 30%)",
+      "linear-gradient(135deg, rgba(0, 122, 98, 0.56), rgba(33, 181, 234, 0.16)), radial-gradient(circle at 78% 18%, rgba(160, 201, 109, 0.34), transparent 30%)",
   },
   "allgaeu-bayerisch-schwaben": {
     guideUrl: "https://erlebe.bayern/guide/allgaeu-bayerisch-schwaben/",
-    color: "#7f6f5a",
-    accent: "#aea693",
+    color: "#6a7f1d",
+    accent: "#ffce44",
     imageSrc: "/result-bg/4.png",
     backdrop:
-      "linear-gradient(135deg, rgba(127, 111, 90, 0.46), rgba(158, 9, 47, 0.22)), radial-gradient(circle at 78% 18%, rgba(174, 166, 147, 0.22), transparent 29%)",
+      "linear-gradient(135deg, rgba(160, 201, 109, 0.56), rgba(255, 206, 68, 0.28)), radial-gradient(circle at 78% 18%, rgba(255, 206, 68, 0.3), transparent 29%)",
   },
 };
 
@@ -111,22 +111,22 @@ const withStyle = (
 export const quizContent: Record<QuizLanguage, QuizContent> = {
   de: {
     copy: {
-      headerEyebrow: "Festival-Quiz",
+      headerEyebrow: "Bayern gehört erlebt",
       headerTitle: "Welcher Bayern-Typ bist du?",
-      reset: "Reset",
-      attractEyebrow: "Festival-Quiz",
-      attractTitle: "Laut. Echt. Bayerisch.",
+      reset: "Neu starten",
+      attractEyebrow: "Bayern gehört erlebt",
+      attractTitle: "Welcher Bayern-Typ bist du?",
       attractButton: "Tippen zum Starten",
-      startEyebrow: "60-Sekunden-Quiz",
-      startTitle: "Du feierst hier – aber welcher Bayern-Vibe steckt wirklich in dir?",
-      startDescription: "Mach das 60-Sekunden-Quiz und finde heraus, welcher Bayern-Typ du bist!",
-      startTagline: "Laut. Echt. Bayerisch.",
-      startButton: "Start",
+      startEyebrow: "Bayern-Kampagne",
+      startTitle: "Dein Bayern-Moment beginnt hier.",
+      startDescription: "Erlebe Bayern in 60 Sekunden und finde heraus, welcher Bayern-Typ in dir steckt.",
+      startTagline: "Bayern gehört erlebt.",
+      startButton: "Quiz starten",
       questionLabel: "Frage",
       back: "Zurück",
-      answerHint: "Antwort antippen, nächste Frage kommt automatisch.",
+      answerHint: "Antwort antippen, die nächste Frage kommt automatisch.",
       calculating: "Dein Bayern-Typ wird ermittelt...",
-      resultEyebrow: "Dein Bayern-Typ",
+      resultEyebrow: "Bayern gehört erlebt",
       resultVibeLabel: "Dein Vibe",
       scanCopy: "Scannen und deinen Bayern-Typ erleben!",
       qrAriaLabel: "QR-Code",
