@@ -69,35 +69,35 @@ export const resultOrder: BayernTypeId[] = ["franken", "oberbayern", "ostbayern"
 const resultStyles: Record<BayernTypeId, Pick<ResultMeta, "color" | "accent" | "backdrop" | "guideUrl" | "imageSrc">> = {
   "franken": {
     guideUrl: "https://erlebe.bayern/guide/franken/",
-    color: "#9e092f",
-    accent: "#ffce44",
-    imageSrc: "/result-bg/1.png",
+    color: "#ed303c",
+    accent: "#ffed00",
+    imageSrc: "/result-bg/BG_FestivalTypen.jpg",
     backdrop:
-      "linear-gradient(135deg, rgba(158, 9, 47, 0.58), rgba(255, 206, 68, 0.18)), radial-gradient(circle at 74% 16%, rgba(255, 206, 68, 0.34), transparent 31%)",
+      "linear-gradient(135deg, rgba(237, 48, 60, 0.54), rgba(215, 71, 155, 0.22)), radial-gradient(circle at 74% 16%, rgba(255, 237, 0, 0.34), transparent 31%)",
   },
   "oberbayern": {
     guideUrl: "https://erlebe.bayern/guide/oberbayern/",
-    color: "#001f47",
-    accent: "#21b5ea",
-    imageSrc: "/result-bg/2.png",
+    color: "#0068b4",
+    accent: "#00ffe0",
+    imageSrc: "/result-bg/BG_FestivalTypen2.jpg",
     backdrop:
-      "linear-gradient(135deg, rgba(0, 31, 71, 0.6), rgba(255, 206, 68, 0.14)), radial-gradient(circle at 78% 18%, rgba(33, 181, 234, 0.3), transparent 28%)",
+      "linear-gradient(135deg, rgba(0, 104, 180, 0.58), rgba(0, 255, 224, 0.2)), radial-gradient(circle at 78% 18%, rgba(0, 255, 224, 0.3), transparent 28%)",
   },
   "ostbayern": {
     guideUrl: "https://erlebe.bayern/guide/ostbayern/",
-    color: "#007a62",
-    accent: "#a0c96d",
-    imageSrc: "/result-bg/3.png",
+    color: "#007f73",
+    accent: "#00ffe0",
+    imageSrc: "/result-bg/BG_FestivalTypen3.jpg",
     backdrop:
-      "linear-gradient(135deg, rgba(0, 122, 98, 0.56), rgba(33, 181, 234, 0.16)), radial-gradient(circle at 78% 18%, rgba(160, 201, 109, 0.34), transparent 30%)",
+      "linear-gradient(135deg, rgba(0, 127, 115, 0.56), rgba(0, 255, 224, 0.18)), radial-gradient(circle at 78% 18%, rgba(160, 201, 109, 0.32), transparent 30%)",
   },
   "allgaeu-bayerisch-schwaben": {
     guideUrl: "https://erlebe.bayern/guide/allgaeu-bayerisch-schwaben/",
-    color: "#6a7f1d",
-    accent: "#ffce44",
-    imageSrc: "/result-bg/4.png",
+    color: "#7da300",
+    accent: "#ffed00",
+    imageSrc: "/result-bg/BG_FestivalTypen4.jpg",
     backdrop:
-      "linear-gradient(135deg, rgba(160, 201, 109, 0.56), rgba(255, 206, 68, 0.28)), radial-gradient(circle at 78% 18%, rgba(255, 206, 68, 0.3), transparent 29%)",
+      "linear-gradient(135deg, rgba(125, 163, 0, 0.52), rgba(255, 237, 0, 0.28)), radial-gradient(circle at 78% 18%, rgba(255, 237, 0, 0.34), transparent 29%)",
   },
 };
 

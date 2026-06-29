@@ -196,10 +196,10 @@ export default function App() {
         "--frame-ink": result.color,
       }
     : {
-        "--frame-primary": "#001f47",
-        "--frame-secondary": "#008ecf",
+        "--frame-primary": "#662483",
+        "--frame-secondary": "#cc66ff",
         "--frame-surface": "rgba(255, 255, 255, 0.9)",
-        "--frame-ink": "#001f47",
+        "--frame-ink": "#373545",
       }) as CSSProperties;
 
   const goToStart = () => {

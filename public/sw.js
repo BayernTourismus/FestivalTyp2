@@ -22,10 +22,10 @@ const APP_SHELL = [
   '/assets/museo-slab-700.woff',
   '/start.png',
   '/bayern-gehoert-erlebt.mp4',
-  '/result-bg/1.png',
-  '/result-bg/2.png',
-  '/result-bg/3.png',
-  '/result-bg/4.png'
+  '/result-bg/BG_FestivalTypen.jpg',
+  '/result-bg/BG_FestivalTypen2.jpg',
+  '/result-bg/BG_FestivalTypen3.jpg',
+  '/result-bg/BG_FestivalTypen4.jpg'
 ]
 
 self.addEventListener('install', (event) => {
