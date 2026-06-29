@@ -30,5 +30,3 @@ if ("serviceWorker" in navigator && import.meta.env.PROD) {
     });
   });
 }
-
-
