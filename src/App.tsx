@@ -284,7 +284,7 @@ export default function App() {
         {state.screen === "attract" ?
           <button className="attract-screen" onClick={goToStart} type="button">
             <img className="campaign-video campaign-video-fallback" src={CAMPAIGN_IMAGE_SRC} alt="" aria-hidden="true" />
-            <video className="campaign-video" autoPlay loop muted playsInline poster={CAMPAIGN_IMAGE_SRC} aria-hidden="true">
+            <video className="campaign-video" autoPlay loop muted playsInline preload="auto" poster={CAMPAIGN_IMAGE_SRC} aria-hidden="true">
               <source src={CAMPAIGN_VIDEO_SRC} type="video/mp4" />
             </video>
             <div className="attract-copy">

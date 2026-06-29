@@ -21,6 +21,7 @@ const APP_SHELL = [
   '/assets/museo-slab-700.woff2',
   '/assets/museo-slab-700.woff',
   '/start.png',
+  '/bayern-gehoert-erlebt.mp4',
   '/result-bg/1.png',
   '/result-bg/2.png',
   '/result-bg/3.png',
