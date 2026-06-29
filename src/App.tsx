@@ -188,20 +188,19 @@ export default function App() {
   const result = state.resultId ? results[state.resultId] : null;
   const progress = Math.round((state.currentQuestion / totalQuestions) * 100);
   const frameStyle = (
-    result && state.screen === "result"
-      ? {
-          "--frame-primary": result.color,
-          "--frame-secondary": result.accent,
-          "--frame-surface": "rgba(255, 255, 255, 0.9)",
-          "--frame-ink": result.color,
-        }
-      : {
-          "--frame-primary": "#001f47",
-          "--frame-secondary": "#008ecf",
-          "--frame-surface": "rgba(255, 255, 255, 0.9)",
-          "--frame-ink": "#001f47",
-        }
-  ) as CSSProperties;
+    result && state.screen === "result" ?
+      {
+        "--frame-primary": result.color,
+        "--frame-secondary": result.accent,
+        "--frame-surface": "rgba(255, 255, 255, 0.9)",
+        "--frame-ink": result.color,
+      }
+    : {
+        "--frame-primary": "#001f47",
+        "--frame-secondary": "#008ecf",
+        "--frame-surface": "rgba(255, 255, 255, 0.9)",
+        "--frame-ink": "#001f47",
+      }) as CSSProperties;
 
   const goToStart = () => {
     setState({ ...initialState, language: state.language, screen: "start" });
@@ -402,7 +401,9 @@ export default function App() {
                 ))}
               </h3>
               <p>{result.guideLabel}</p>
-              {!isOnline ? <p className="offline-note">Offline-Modus: Der Guide-Link öffnet sich wieder, sobald das Gerät online ist.</p> : null}
+              {!isOnline ?
+                <p className="offline-note">Offline-Modus: Der Guide-Link öffnet sich wieder, sobald das Gerät online ist.</p>
+              : null}
               <a className="primary-button" href={result.guideUrl} rel="noreferrer" target="_blank">
                 {result.cta.split(/\s*\/\s*/).map((part, i, arr) => (
                   <span key={i}>
