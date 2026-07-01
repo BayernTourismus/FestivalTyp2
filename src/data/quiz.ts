@@ -70,31 +70,31 @@ const resultStyles: Record<BayernTypeId, Pick<ResultMeta, "color" | "accent" | "
   "franken": {
     guideUrl: "https://erlebe.bayern/guide/franken/",
     color: "#ed303c",
-    accent: "#ffed00",
-    imageSrc: "/result-bg/BG_FestivalTypen.jpg",
+    accent: "#d7719b",
+    imageSrc: "/result-bg/BG_FestivalTypen2.jpg",
     backdrop:
       "linear-gradient(135deg, rgba(237, 48, 60, 0.54), rgba(215, 71, 155, 0.22)), radial-gradient(circle at 74% 16%, rgba(255, 237, 0, 0.34), transparent 31%)",
   },
   "oberbayern": {
     guideUrl: "https://erlebe.bayern/guide/oberbayern/",
-    color: "#0068b4",
-    accent: "#00ffe0",
-    imageSrc: "/result-bg/BG_FestivalTypen2.jpg",
+    color: "#00bfb3",
+    accent: "#cc66ff",
+    imageSrc: "/result-bg/BG_FestivalTypen3.jpg",
     backdrop:
-      "linear-gradient(135deg, rgba(0, 104, 180, 0.58), rgba(0, 255, 224, 0.2)), radial-gradient(circle at 78% 18%, rgba(0, 255, 224, 0.3), transparent 28%)",
+      "linear-gradient(135deg, rgba(0, 191, 179, 0.58), rgba(204, 102, 255, 0.2)), radial-gradient(circle at 78% 18%, rgba(204, 102, 255, 0.3), transparent 28%)",
   },
   "ostbayern": {
     guideUrl: "https://erlebe.bayern/guide/ostbayern/",
-    color: "#007f73",
-    accent: "#00ffe0",
-    imageSrc: "/result-bg/BG_FestivalTypen3.jpg",
+    color: "#00bfb3",
+    accent: "#a0c96d",
+    imageSrc: "/result-bg/BG_FestivalTypen.jpg",
     backdrop:
-      "linear-gradient(135deg, rgba(0, 127, 115, 0.56), rgba(0, 255, 224, 0.18)), radial-gradient(circle at 78% 18%, rgba(160, 201, 109, 0.32), transparent 30%)",
+      "linear-gradient(135deg, rgba(0, 191, 179, 0.56), rgba(160, 201, 109, 0.18)), radial-gradient(circle at 78% 18%, rgba(160, 201, 109, 0.32), transparent 30%)",
   },
   "allgaeu-bayerisch-schwaben": {
     guideUrl: "https://erlebe.bayern/guide/allgaeu-bayerisch-schwaben/",
-    color: "#7da300",
-    accent: "#ffed00",
+    color: "#ffed00",
+    accent: "#7da300",
     imageSrc: "/result-bg/BG_FestivalTypen4.jpg",
     backdrop:
       "linear-gradient(135deg, rgba(125, 163, 0, 0.52), rgba(255, 237, 0, 0.28)), radial-gradient(circle at 78% 18%, rgba(255, 237, 0, 0.34), transparent 29%)",
